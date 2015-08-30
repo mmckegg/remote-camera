@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <link href='styles.css' rel='stylesheet' />
+  </head>
+  <body>
+
+    <video autoplay id='viewer'></video>
+
+    <div id='message'>
+      <h1>waiting for connection...</h1>
+      <div id='host'></div>
+    </div>
+
+    <button class='close'>X</button>
+
+    <script>
+      var http = require('http')
+      var beefy = require('beefy')
+      var PeerStreamServer = require('./lib/peer-stream-server')
+      var remote = require('remote');
+
+      var port = 8080
+      var viewer = document.getElementById('viewer')
+      var hostElement = document.getElementById('host')
+      var messageElement = document.getElementById('message')
+      var closeButton = document.querySelector('button.close')
+
+      var server = http.createServer(beefy({
+        entries: ['entry.js'],
+        cwd: __dirname + '/client'
+      }))
+
+      var streamServer = PeerStreamServer({ server: server })
+      streamServer.on('stream', function (url) {
+        viewer.src = url
+      })
+
+      viewer.onplaying = function (e) {
+        messageElement.hidden = true
+      }
+
+      viewer.ontimeupdate = function (e) {
+        if (viewer.currentTime === 0) {
+          messageElement.hidden = false
+        }
+      }
+
+      closeButton.onclick = function () {
+        var window = remote.getCurrentWindow()
+        window.close()
+      }
+
+      hostElement.textContent = streamServer.ip + ':' + port
+      server.listen(port)
+    </script>
+
+  </body>
+</html>

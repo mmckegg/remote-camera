@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Stream your camera!</title>
+    <style>
+
+      body {
+        font-family: sans-serif;
+        cursor: move;
+        margin: 0;
+        overflow: hidden;
+        background: linear-gradient(
+          to bottom, 
+          #444 0%, 
+          #111 100%
+        );
+      }
+
+      #message {
+        text-align: center;
+        position: absolute;
+        left:50%; 
+        top:50%; 
+        width: 100%;
+        transform:translate(-50%,-50%);
+        color: #AAA;
+      }
+
+      h1 {
+        font-size: 110%;
+        color: white;
+        margin-bottom: 3px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id='message'>
+      <h1>Sending webcam to server!</h1>
+    </div>
+    <script src="/entry.js"></script>
+  </body>
+</html>
