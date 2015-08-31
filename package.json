@@ -1,8 +1,7 @@
 {
   "name": "remote-camera",
   "version": "1.0.0",
-  "description": "",
-  "private": true,
+  "description": "Example electron app that creates a web server and then streams the remote web-cam of connected user to the local machine.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron main.js"
