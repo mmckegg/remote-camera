@@ -7,10 +7,10 @@ Example [electron](http://electron.atom.io/) app that creates a web server and t
 
 Install and run the app:
 
-```
+```bash
 $ npm install remote-camera -g
 $ remote-camera
-``
+```
 
 Now on another computed on the local network (or the same one if you want), navigate to the address displayed. 
 
