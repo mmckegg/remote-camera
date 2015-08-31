@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron main.js"
   },
+  "bin": {
+    "remote-camera": "./cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/mmckegg/remote-camera.git"

@@ -19,6 +19,7 @@ app.on('ready', function () {
 
   window.loadUrl('file://' + join(__dirname, 'index.html'))
 
+  // prevent white flicker on load
   setTimeout(function () {
     window.show()
   }, 300)
