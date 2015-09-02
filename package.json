@@ -22,7 +22,7 @@
   "dependencies": {
     "beefy": "~2.1.5",
     "browserify": "~11.0.1",
-    "electron-prebuilt": "~0.31.1",
+    "electron-prebuilt": "~0.27.3",
     "getusermedia": "~1.3.5",
     "simple-peer": "~5.11.5",
     "ws": "~0.8.0"
